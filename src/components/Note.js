@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import NotesForm from './NotesForm'
-import { RiCloseCircleLine } from 'react-icons/ri'
+import { RiCloseCircleLine, RiCheckboxCircleLine } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
 
 function Note({notes, completeNote, removeNote, editNote}) {
@@ -23,10 +23,11 @@ function Note({notes, completeNote, removeNote, editNote}) {
 
     return notes.map((note, i) => (
         <div className={note.isComplete ? 'notes-row complete' : 'notes-row'} key={i}>
-        <div key={note.id} onClick={() => completeNote(note.id)}>{note.text}</div>
+        <div key={note.id}>{note.text}</div>
             <div className="icons">
             <RiCloseCircleLine className="delete-icon" onClick={() => removeNote(note.id)} />
             <TiEdit className="edit-icon" onClick={() => setEdit({id: note.id, value: note.text})} />
+            <RiCheckboxCircleLine className="doneIcon" onClick={() => completeNote(note.id)}/>
             </div>
         </div>
     ))

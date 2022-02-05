@@ -37,7 +37,7 @@ function NotesList() {
 
     return (
         <div>
-            <h1 id='titleHYF'>How are you feeling today?</h1>
+            <h1 id='titleHYF'> </h1>
             <NotesForm onSubmit={addNote} />
             <Note notes={notes} completeNote={completeNote} removeNote={removeNote} editNote={editNote} />
         </div>
